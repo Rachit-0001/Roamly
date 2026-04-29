@@ -7,9 +7,11 @@ const  listingSchema =new Schema({
         required: true,
     },
     description:String,
+    
     image:{
         type: String,
-        set: (v) => v === "" ? "default link" : v,
+        default:"https://www.booking.com/hotel/hr/vila-vala.html",
+        set: (v) => v === "" ? "https://www.booking.com/hotel/hr/vila-vala.html" : v,
     },
     price:Number,
     location:String,
@@ -17,4 +19,4 @@ const  listingSchema =new Schema({
 });
 
 const Listing =moongose.model("Listing",listingSchema);
-modules.export=Listing;
+module.exports=Listing;
