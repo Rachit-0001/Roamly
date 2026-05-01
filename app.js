@@ -49,6 +49,9 @@ app.post("/listings",async(req,res)=>{
     res.redirect("/listings");
 });
 
+//update route
+
+//delete route
 
 
 
