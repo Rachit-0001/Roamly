@@ -50,13 +50,19 @@ app.post("/listings",async(req,res)=>{
 });
 
 //update route
-app.put("/listings/:id",async(req,res)=>{
-    res.send(await Lisiting.findByIdAndUpdate(req.params.id,{...req.body.listing}));
+app.put("/listings/:id", async (req, res) => {
+    const { id } = req.params;
+    const updatedListing = await Listing.findByIdAndUpdate(id,
+        { ...req.body.listing },
+        { new: true });
+    res.redirect(`/listings/${id}`);
 });
 
 //delete route
-app.put("/listings/:id",async(req,res)=>{
-    res.send(await Listing.findByIdAndDelete(req.params.id))
+app.delete("/listings/:id", async (req, res) => {
+    const { id } = req.params;
+    await Listing.findByIdAndDelete(id);
+    res.redirect("/listings");
 });
 
 
