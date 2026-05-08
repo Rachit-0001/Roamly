@@ -13,4 +13,5 @@ Roamly is a full-stack MERN (MongoDB, Express, React, Node.js) web application i
 -🎨 Responsive UI (React-based)
 -🔄 Full CRUD operations
 
-Use React as frontened and express as backend 
+Use React as frontened and express as backend . 
+for future we integrate we AI
